@@ -2,13 +2,14 @@
 import requests
 from bs4 import *
 from lxml import html
-import xlrd, xlwt, xlutils
+import xlrd, xlwt
 def log_uncaught_exceptions(ex_cls, ex, tb):
     text = '{}: {}:\n'.format(ex_cls.__name__, ex)
     import traceback
     text += ''.join(traceback.format_tb(tb))
     import sys
     sys.excepthook = log_uncaught_exceptions
+
 class PageDownload():
     def __init__(self, urls):
         self.urls = urls
@@ -30,7 +31,7 @@ class PageDownload():
             try:
                 self.s = requests.get(url)
                 b = BeautifulSoup(self.s.content)
-                self.title = b.select('head > title')
+                self.title = b.title
                 self.desc = b.select('meta[name="description"]')
                 self.h1 = b.select('h1')
                 self.text = b.select('div[class="sl-description-text"]')
@@ -44,7 +45,7 @@ class PageDownload():
                 self.h1 = e
                 self.text = e
 
-            self.xl_title = str(self.title.renderContents())
+            self.xl_title = str(self.title)
             self.xl_desc = str(self.desc)
             self.xl_h1 = str(self.h1)
             self.xl_text = str(self.text)
@@ -61,13 +62,11 @@ class PageDownload():
 
             i += 1
 
-        wb.save(r'''C:\Users\kotov_or\PycharmProjects\PageDataDownloader\xl\output.xls''')
+        wb.save(r'''C:\Users\%Path%\output.xls''')
 
-with open(r'''C:\Users\kotov_or\PycharmProjects\PageDataDownloader\xl\urloidi.txt''') as f:
+with open(r'''C:\Users\%Path%\urloidi.txt''') as f:
     urls = f.read().splitlines()
 
 p = PageDownload(urls)
 p.taking_things()
-#37000/45000
-
 
