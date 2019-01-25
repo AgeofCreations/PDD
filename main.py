@@ -30,13 +30,15 @@ class PageDownload():
         for url in self.urls:
             try:
                 self.s = requests.get(url)
-                b = BeautifulSoup(self.s.content)
-                self.title = b.title
-                self.desc = b.select('meta[name="description"]')
-                self.h1 = b.select('h1')
-                self.text = b.select('div[class="sl-description-text"]')
-                self.sfp = b.select('div[class="bottom-filter-pages"]')
-                self.sfpu = b.select('div[class="top-filter-pages"]')
+                b = BeautifulSoup(self.s.content,"lxml")
+                self.title = b.title.string
+                self.desc1 = b.find(attrs={"name" : "description"})
+                self.desc = self.desc1.get('content')
+                self.h1 = b.h1.string
+                self.text1 = b.find(attrs={"class" : "sl-description-text"})
+                self.text = self.text1.contents
+                self.sfp = b.find(attrs={"class" : "filter-pages-wrapper bottom"})
+                self.sfpu = b.find(attrs={"class" : "top-filter-pages"})
 
             except Exception as e:
                 e = 'Invalid URL'
@@ -62,11 +64,10 @@ class PageDownload():
 
             i += 1
 
-        wb.save(r'''C:\Users\%Path%\output.xls''')
+        wb.save(r'''C:\Users\kotov_or\PycharmProjects\PageDataDownloader\xl\output.xls''')
 
-with open(r'''C:\Users\%Path%\urloidi.txt''') as f:
+with open(r'''C:\Users\kotov_or\PycharmProjects\PageDataDownloader\xl\urloidi.txt''') as f:
     urls = f.read().splitlines()
 
 p = PageDownload(urls)
 p.taking_things()
-
