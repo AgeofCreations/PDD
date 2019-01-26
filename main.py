@@ -47,6 +47,8 @@ class PageDownload():
                 self.h1 = e
                 self.text = e
 
+            print('Сейчас выполняется '+str(i)+'-й элемент списка из ' + str(len(self.urls))+'-х')
+
             self.xl_title = str(self.title)
             self.xl_desc = str(self.desc)
             self.xl_h1 = str(self.h1)
@@ -71,3 +73,4 @@ with open(r'''C:\Users\kotov_or\PycharmProjects\PageDataDownloader\xl\urloidi.tx
 
 p = PageDownload(urls)
 p.taking_things()
+
