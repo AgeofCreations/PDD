@@ -28,24 +28,33 @@ class PageDownload():
         ws.write(0, 6, 'PFS(upper)')
 
         for url in self.urls:
-            try:
-                self.s = requests.get(url)
-                b = BeautifulSoup(self.s.content,"lxml")
-                self.title = b.title.string
-                self.desc1 = b.find(attrs={"name" : "description"})
-                self.desc = self.desc1.get('content')
-                self.h1 = b.h1.string
-                self.text1 = b.find(attrs={"class" : "sl-description-text"})
-                self.text = self.text1.contents
-                self.sfp = b.find(attrs={"class" : "filter-pages-wrapper bottom"})
-                self.sfpu = b.find(attrs={"class" : "top-filter-pages"})
+            self.s = requests.get(url)
+            b = BeautifulSoup(self.s.content,"lxml")
+            self.title = b.title.string
+            self.desc1 = b.find(attrs={"name" : "description"})
+            self.desc = self.desc1.get('content')
 
-            except Exception as e:
-                e = 'Invalid URL'
-                self.title = e
-                self.desc = e
-                self.h1 = e
-                self.text = e
+            try:
+                self.h1 = b.h1.string
+            except AttributeError:
+                self.h1 = 'На странице нет h1'
+            try:
+                self.text1 = b.find(attrs={"class" : "sl-description-text"})
+            except:
+                self.text1 = 'Похоже, на странице нет текста'
+            try:
+                self.text = self.text1.contents
+            except:
+                self.text = 'Похоже, на странице нет ПФС.'
+            try:
+                self.sfp = b.find(attrs={"class" : "filter-pages-wrapper bottom"})
+            except AttributeError:
+                self.sfp = 'Кажется, на этой странице нет нижних ПФС'
+            try:
+                self.sfpu = b.find(attrs={"class" : "top-filter-pages"})
+            except AttributeError:
+                self.xl_sfpu = 'Кажется, на этой странице нет верхних ПФС'
+
 
             print('Сейчас выполняется '+str(i)+'-й элемент списка из ' + str(len(self.urls))+'-х')
 
@@ -53,8 +62,16 @@ class PageDownload():
             self.xl_desc = str(self.desc)
             self.xl_h1 = str(self.h1)
             self.xl_text = str(self.text)
-            self.xl_sfp = str(self.sfp)
-            self.xl_sfpu = str(self.sfpu)
+            try:
+                self.xl_sfp = self.sfp
+                self.xl_sfp = self.xl_sfp.get_text().split('|')
+            except AttributeError:
+                self.xl_sfp = 'На странице нет нижних ПФС'
+
+            try:
+                self.xl_sfpu = str(self.sfpu)
+            except AttributeError:
+                self.xl_sfpu = 'На странице нет верхних ПФС'
 
             ws.write(i, 0, url)
             ws.write(i, 1, self.xl_title)
@@ -66,9 +83,9 @@ class PageDownload():
 
             i += 1
 
-        wb.save(r'''C:\Users\kotov_or\PycharmProjects\PageDataDownloader\xl\output.xls''')
+        wb.save(r'''output.xls''')
 
-with open(r'''C:\Users\kotov_or\PycharmProjects\PageDataDownloader\xl\urloidi.txt''') as f:
+with open(r'''urloidi.txt''') as f:
     urls = f.read().splitlines()
 
 p = PageDownload(urls)
