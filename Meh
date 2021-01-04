@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-01-04T05:52:55.418Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36" etag="cDSRrEQN5Z-CwmIMDxQp" version="13.9.3" type="github">
+<mxfile host="app.diagrams.net" modified="2021-01-04T05:55:03.909Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36" etag="xoLVptTF8d3xI8tcr5t1" version="13.9.3" type="github">
   <diagram id="6NN6B09WTW66owBTqTIZ" name="Page-1">
     <mxGraphModel dx="1773" dy="1712" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -7,12 +7,12 @@
         <mxCell id="jceWqmLtcn9oFifqkoQv-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="jceWqmLtcn9oFifqkoQv-1" target="jceWqmLtcn9oFifqkoQv-4">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="jceWqmLtcn9oFifqkoQv-11" value="3. UART $START" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="jceWqmLtcn9oFifqkoQv-10">
+        <mxCell id="jceWqmLtcn9oFifqkoQv-11" value="4. UART $START" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="jceWqmLtcn9oFifqkoQv-10">
           <mxGeometry x="0.0727" y="3" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="jceWqmLtcn9oFifqkoQv-14" value="5.WS DATA" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="jceWqmLtcn9oFifqkoQv-1" target="jceWqmLtcn9oFifqkoQv-3">
+        <mxCell id="jceWqmLtcn9oFifqkoQv-14" value="6.WS DATA" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="jceWqmLtcn9oFifqkoQv-1" target="jceWqmLtcn9oFifqkoQv-3">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="240" y="260" />
@@ -36,7 +36,7 @@
         <mxCell id="jceWqmLtcn9oFifqkoQv-2" value="Mobile" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="500" y="260" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="jceWqmLtcn9oFifqkoQv-9" value="2. WS | Start" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="jceWqmLtcn9oFifqkoQv-3" target="jceWqmLtcn9oFifqkoQv-1">
+        <mxCell id="jceWqmLtcn9oFifqkoQv-9" value="3. WS | Start" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="jceWqmLtcn9oFifqkoQv-3" target="jceWqmLtcn9oFifqkoQv-1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="320" y="190" />
@@ -47,7 +47,7 @@
         <mxCell id="jceWqmLtcn9oFifqkoQv-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;startArrow=classicThin;startFill=1;" edge="1" parent="1" source="jceWqmLtcn9oFifqkoQv-3" target="jceWqmLtcn9oFifqkoQv-5">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="jceWqmLtcn9oFifqkoQv-20" value="6. OpenCV. Capture" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="jceWqmLtcn9oFifqkoQv-19">
+        <mxCell id="jceWqmLtcn9oFifqkoQv-20" value="2. OpenCV. Capture" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="jceWqmLtcn9oFifqkoQv-19">
           <mxGeometry x="0.3545" y="4" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -82,7 +82,7 @@
         <mxCell id="jceWqmLtcn9oFifqkoQv-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="jceWqmLtcn9oFifqkoQv-4" target="jceWqmLtcn9oFifqkoQv-1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="jceWqmLtcn9oFifqkoQv-13" value="4. UART DATA" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="jceWqmLtcn9oFifqkoQv-12">
+        <mxCell id="jceWqmLtcn9oFifqkoQv-13" value="5. UART DATA" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="jceWqmLtcn9oFifqkoQv-12">
           <mxGeometry x="-0.2636" y="2" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
